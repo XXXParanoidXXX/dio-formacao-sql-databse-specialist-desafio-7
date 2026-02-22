@@ -118,7 +118,14 @@ mysqldump -u root -p \
 # BACKUP DE BANCOS ESPECÍFICOS DA INSTÂNCIA
 # -----------------------------------------
 mysqldump -u root -p \
-  --databases world sakila > bkp_selected_databases.sql
+--databases world sakila > bkp_selected_databases.sql
+
+mysqldump -u root -p \
+  --databases world sakila \
+  --routines \
+  --events \
+  --triggers \
+  > bkp_selected_databases.sql
 
 # --------------------------------
 # BACKUP DE TABELA ESPECÍFICA
